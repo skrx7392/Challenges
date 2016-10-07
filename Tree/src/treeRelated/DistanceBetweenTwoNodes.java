@@ -20,5 +20,4 @@ public class DistanceBetweenTwoNodes {
 		}
 		return 0;
 	}
-
 }
