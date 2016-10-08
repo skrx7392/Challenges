@@ -13,7 +13,7 @@ public class UncommonElement {
 		System.out.println(i);
 		int j = MultipleOfThree.multipleOfThree(list3);
 		System.out.println(j);
-		int k = KnightMoves.knightMoves(45,45);
+		int k = KnightMoves.knightMoves(1,46);
 		System.out.println(k);
 	}
 	
