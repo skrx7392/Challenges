@@ -24,20 +24,20 @@ public class KnightMoves {
 		myQueue.add(new Node(src));
 		distances[src] = 0;
 		while(!myQueue.isEmpty()) {
-			Node node = myQueue.remove(0);
-			int loc = node.location;
+			Node escapeNode = myQueue.remove(0);
+			int loc = escapeNode.location;
 			List<Integer> nextSteps = populateNextSteps(loc);
 			if(nextSteps.contains(des)) {
-				distances[des] = node.distance+1;
-				return node.distance+1;
+				distances[des] = escapeNode.distance+1;
+				return escapeNode.distance+1;
 			}
 			for(int i:nextSteps) {
-				if(distances[i]>0 && distances[i]<node.distance+1) {
+				if(distances[i]>0 && distances[i]<escapeNode.distance+1) {
 					myQueue.add(new Node(i, distances[i]));
 				}
 				else {
-					distances[i] = node.distance+1;
-					myQueue.add(new Node(i, node.distance+1));
+					distances[i] = escapeNode.distance+1;
+					myQueue.add(new Node(i, escapeNode.distance+1));
 				}
 			}
 		}
